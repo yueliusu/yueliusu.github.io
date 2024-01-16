@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      问题记录2 | 桑榆的Blog
+      问题记录2 多方法解决VS创建多个源文件后出现的重定义错误 | 桑榆的Blog
     
   </title>
   <meta name="author" content="Code_流苏">
@@ -100,7 +100,7 @@
 	<!-- Page title -->
 	<p>
 		
-			「问题记录2」
+			「问题记录2 多方法解决VS创建多个源文件后出现的重定义错误」
 		
 	</p>
 
@@ -227,14 +227,27 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+<script src="/plugin/toc/katelog.min.js"></script>
+
+
+		
 	 
 
 <div class="layout-post">
 	<div id="layout-post">
 		<div class="article-title">
 			
-	<a href="/2024/01/16/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%952/" itemprop="url">
-		问题记录2
+	<a href="/2024/01/16/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%952%20%E5%A4%9A%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3VS%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E6%BA%90%E6%96%87%E4%BB%B6%E5%90%8E%E5%87%BA%E7%8E%B0%E7%9A%84%E9%87%8D%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF/" itemprop="url">
+		问题记录2 多方法解决VS创建多个源文件后出现的重定义错误
 	</a>
 
 		</div>
@@ -250,7 +263,7 @@
 
 	更新于
 
-	<a href="/2024/01/16/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%952/" itemprop="url">
+	<a href="/2024/01/16/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%952%20%E5%A4%9A%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3VS%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E6%BA%90%E6%96%87%E4%BB%B6%E5%90%8E%E5%87%BA%E7%8E%B0%E7%9A%84%E9%87%8D%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF/" itemprop="url">
 		<time datetime="2024-01-16T12:40:26.000Z" itemprop="dateUpdated">
 	  		2024-01-16
 	  </time>
@@ -270,7 +283,45 @@
 		</div>
 
 		<div class="article-content" id="article-content">
-				
+			<blockquote>
+<p><strong>名人说：博学之，审问之，慎思之，明辨之，笃行之。——《中庸》</strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51646682?type=lately">创作者：Code_流苏(CSDN)</a></strong></p>
+<p>本篇文章收录于：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51646682/category_11767748.html">各类问题记录专栏</a></p>
+<p>@<a href="%E8%AE%B0%E5%BD%95">TOC</a></p>
+</blockquote>
+<h3 id="一、原因经过"><a href="#一、原因经过" class="headerlink" title="一、原因经过"></a>一、原因经过</h3><p>由于在一个项目中创建了两个源文件，在运行第二个源文件时，报了以下错误，</p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162220493.png" alt="在这里插入图片描述"></p>
+<p>即：当VS中一个项目下有两个及以上的源文件时，编译会产生错误：main已经在xxxx.obj中定义，找到一个或多个多重定义的符号。于是四处寻找解决办法，总结如下。</p>
+<h3 id="二、解决方法"><a href="#二、解决方法" class="headerlink" title="二、解决方法"></a>二、解决方法</h3><h4 id="1️⃣方法一-注释"><a href="#1️⃣方法一-注释" class="headerlink" title="1️⃣方法一 注释"></a>1️⃣方法一 注释</h4><p><strong>将暂时不使用的源文件的main函数注释掉</strong>，例如想要运行2.cpp时，将1的主函数<strong>用” &#x2F;&#x2F; “ 或者 “&#x2F; * * &#x2F;“注释符注释掉。</strong></p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162221146.png" alt="在这里插入图片描述"></p>
+<p>如图，<strong>注释之后，已经可以正常运行使用了</strong></p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162221288.png" alt="在这里插入图片描述"></p>
+<h4 id="2️⃣方法二-生成排除"><a href="#2️⃣方法二-生成排除" class="headerlink" title="2️⃣方法二 生成排除"></a>2️⃣方法二 生成排除</h4><p>将不需要编译的源文件进行生成排除：<strong>右键—&gt;“属性”，将“从生成中排除”选择—&gt;“是”</strong>，保存后再运行需要运行的源文件就可以成功，且被排除的文件<strong>右下角会有标记</strong>。</p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162221572.png" alt="在这里插入图片描述"><br><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162221724.png" alt="在这里插入图片描述"><br><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162221605.png" alt="在这里插入图片描述"><br><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162221666.png" alt="在这里插入图片描述"><br><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162221518.png" alt="在这里插入图片描述"></p>
+<p><strong>如图，无注释1.cpp的main函数状态下，仍然可以运行成功。</strong></p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162221511.png" alt="在这里插入图片描述"></p>
+<h4 id="3️⃣方法三-直接排除"><a href="#3️⃣方法三-直接排除" class="headerlink" title="3️⃣方法三 直接排除"></a>3️⃣方法三 直接排除</h4><p><strong>右键对应源文件，选择“从项目中排除”</strong>，之后项目中不会见到该源文件，例如将1.cpp排除，之后运行2.cpp</p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162221904.png" alt="在这里插入图片描述"></p>
+<p>排除之后，可以发现只剩2.cpp了</p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162221799.png" alt="在这里插入图片描述"></p>
+<p><strong>运行如图：</strong></p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162221917.png" alt="在这里插入图片描述"></p>
+<p><strong>看到这里有小伙伴可能会有疑问，那1.cpp是被删除了吗？</strong><br>实际上没有被删除，只是说，你在这里看不见了，不代表它直接从根目录删除了。<br>如图可见，并没有被删除，在根目录，文件依然是存在的，想要使用再添加到项目下就行了。</p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162222215.png" alt="在这里插入图片描述"></p>
+<h4 id="4️⃣方法四-新建一个项目"><a href="#4️⃣方法四-新建一个项目" class="headerlink" title="4️⃣方法四 新建一个项目"></a>4️⃣方法四 新建一个项目</h4><p>如果是两个根本并不相关的程序，不妨<strong>新建一个项目</strong>，将其中一个程序放到新建的项目里，这样就不会产生所谓的重定义问题了，不过这样可能会有些费工夫。</p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162222894.png" alt="在这里插入图片描述"></p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162222438.png" alt="在这里插入图片描述"><br><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162222214.png" alt="在这里插入图片描述"></p>
+<p>创建源文件，之后点击运行，<strong>如图，程序成功运行。</strong></p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162222850.png" alt="在这里插入图片描述"></p>
+<h4 id="5️⃣方法五-换devc-或其它编译器"><a href="#5️⃣方法五-换devc-或其它编译器" class="headerlink" title="5️⃣方法五 换devc++或其它编译器"></a>5️⃣方法五 换devc++或其它编译器</h4><p>VS目前使用起来是偏工程项目型的，但是UI、编译等体验确实不错，不过如果觉得以上步骤比较麻烦，可以考虑比较简洁的devc++，devc++在使用时一般不会出现此类问题，当然其它类似的软件也是可以的，方便使用就行。</p>
+<p><img src="https://yueliusu.oss-cn-beijing.aliyuncs.com/imgs/202401162222917.png" alt="在这里插入图片描述"></p>
+<p><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/orwelldevcpp/">devc++下载地址</a></p>
+<h3 id="三、总结收获"><a href="#三、总结收获" class="headerlink" title="三、总结收获"></a>三、总结收获</h3><p>在遇到问题时，不要怕麻烦，解决它往往才是最便捷的路径。</p>
+<p>最后，以此句作尾，<strong>走遍世间萧瑟与繁华，愿你仍能保持一颗热忱的心！</strong></p>
+<blockquote>
+<p><strong>很感谢你能看到这里，如有相关疑问，还请下方评论留言。</strong><br>**<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51646682?type=lately">Code_流苏(CSDN)</a>**（一个喜欢古诗词和编程的Coder😊）<br><strong>问题解决时间记录：2023&#x2F;4&#x2F;8</strong></p>
+</blockquote>
+	
 		</div>
 		
 		<div id="current-post-cover" data-scr="/img/post-cover/4.jpg"></div>
