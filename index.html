@@ -25,6 +25,7 @@
   <!-- css -->
   
 <link rel="stylesheet" href="/css/Annie.css">
+<link rel="stylesheet" href="/css/traditional-nav.css">
 
   
   <!-- jquery -->
@@ -65,30 +66,29 @@
 	</div>
 
 
-<!-- header -->
-<header class="fixbackground bg-pan-br">
-	<div class="mask">
-		<!-- motto -->
-		<div class="h-body">	
-			
-				<div class="motto text-shadow-pop-left">
-					<p class="content" id="motto-content">获取中...</p>
-					<p>-<p>
-					<p class="author" id="motto-author">Just a minute...</p>
-				</div>
-			
-		</div>
-		
-		<!-- others: such as time... -->			
-		<div class="h-footer">
-			<a href="javascript:;" id="read-more" class="scroll-down">
-				<span class="icon-anchor1 animation-scroll-down"></span>
+<!-- 传统导航栏 -->
+<div class="traditional-nav">
+	<div class="nav-wrapper">
+		<div class="nav-logo">
+			<a href="/">
+				<img src="/img/logo.png" alt="Logo">
 			</a>
 		</div>
+		<div class="nav-menu">
+			<ul>
+				<li><a href="/" class="menu-item-home">主页</a></li>
+				<li><a href="/archives" class="menu-item-archive">归档</a></li>
+				<li><a href="/categories" class="menu-item-categories">分类</a></li>
+				<li><a href="/tags" class="menu-item-tags">标签</a></li>
+				<li><a href="/about" class="menu-item-about">关于</a></li>
+				<li><a href="/gallery" class="menu-item-gallery">相册</a></li>
+				<li><a href="javascript:;" class="popup-trigger">搜索</a></li>
+			</ul>
+		</div>
 	</div>
-</header>
+</div>
 
-<div id="navigation-hide">
+<div id="navigation-hide" style="display: none;">
 	<!-- Progress bar -->
 	<div id="progress-bar"></div>
 
@@ -108,11 +108,11 @@
 	
 
 	<!-- Nav trigger for navigation-H-->
-	<a class="nav-trigger"><span></span></a>
+	<a class="nav-trigger" style="display: none;"><span></span></a>
 </div>
 
 <!-- Navigation in div(id="navigation-H") -->
-<nav class="nav-container" id="cd-nav">
+<nav class="nav-container" id="cd-nav" style="display: none;">
 	<div class="nav-header">
 		<span class="logo"> 
 			<img src="/img/logo.png">
@@ -436,10 +436,10 @@
 	<div class="copyright">
 		<p>
 			 
-				&copy;2017 - 2024, content by Sariay. All Rights Reserved.
+				&copy;2025, content by yueliusu. All Rights Reserved.
 			
 			
-				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				
 			
 		</p>
 		<p>

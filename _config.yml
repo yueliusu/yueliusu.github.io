@@ -1,0 +1,109 @@
+# Hexo Configuration
+## Basics
+title: 桑榆的Blog
+subtitle: ''
+description: ''
+keywords:
+author: Code_流苏
+language: zh-CN
+timezone: ''
+
+## URL
+url: https://yueliusu.github.io
+root: /
+permalink: :year/:month/:day/:title/
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+## Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+## Writing
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+## Home page setting
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+## Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+## Metadata elements
+meta_generator: true
+
+## Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+## Pagination
+per_page: 10
+pagination_dir: page
+
+## Include / Exclude file(s)
+include:
+exclude:
+ignore:
+
+## Extensions
+theme: Annie
+
+# Theme config
+theme_config:
+  # 评论系统配置
+  comment:
+    enable: true
+    type: valine  # 评论系统类型：valine
+    valine:
+      appId: 'your_leancloud_appid'  # 请替换为您的LeanCloud AppID
+      appKey: 'your_leancloud_appkey'  # 请替换为您的LeanCloud AppKey
+      placeholder: '请输入您的评论...'  # 评论框占位文本
+      avatar: mm  # 默认头像样式
+      meta: [nick, mail]  # 评论者信息
+      pageSize: 10  # 每页评论数
+      lang: zh-CN  # 语言
+      visitor: false  # 文章访问量统计
+      recordIP: false  # 是否记录评论者IP
+      enableQQ: false  # 是否启用QQ头像
+      requiredFields: []  # 必填项
+      background: /img/comment-bg.jpg  # 评论区背景图
+
+## Deployment
+deploy:
+  type: git
+  repo: https://github.com/yueliusu/yueliusu.github.io.git
+  branch: main

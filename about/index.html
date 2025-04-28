@@ -25,6 +25,7 @@
   <!-- css -->
   
 <link rel="stylesheet" href="/css/Annie.css">
+<link rel="stylesheet" href="/css/traditional-nav.css">
 
   
   <!-- jquery -->
@@ -65,30 +66,29 @@
 	</div>
 
 
-<!-- header -->
-<header class="fixbackground bg-pan-br">
-	<div class="mask">
-		<!-- motto -->
-		<div class="h-body">	
-			
-				<div class="motto text-shadow-pop-left">
-					<p class="content" id="motto-content">获取中...</p>
-					<p>-<p>
-					<p class="author" id="motto-author">Just a minute...</p>
-				</div>
-			
-		</div>
-		
-		<!-- others: such as time... -->			
-		<div class="h-footer">
-			<a href="javascript:;" id="read-more" class="scroll-down">
-				<span class="icon-anchor1 animation-scroll-down"></span>
+<!-- 传统导航栏 -->
+<div class="traditional-nav">
+	<div class="nav-wrapper">
+		<div class="nav-logo">
+			<a href="/">
+				<img src="/img/logo.png" alt="Logo">
 			</a>
 		</div>
+		<div class="nav-menu">
+			<ul>
+				<li><a href="/" class="menu-item-home">主页</a></li>
+				<li><a href="/archives" class="menu-item-archive">归档</a></li>
+				<li><a href="/categories" class="menu-item-categories">分类</a></li>
+				<li><a href="/tags" class="menu-item-tags">标签</a></li>
+				<li><a href="/about" class="menu-item-about">关于</a></li>
+				<li><a href="/gallery" class="menu-item-gallery">相册</a></li>
+				<li><a href="javascript:;" class="popup-trigger">搜索</a></li>
+			</ul>
+		</div>
 	</div>
-</header>
+</div>
 
-<div id="navigation-hide">
+<div id="navigation-hide" style="display: none;">
 	<!-- Progress bar -->
 	<div id="progress-bar"></div>
 
@@ -275,7 +275,38 @@
 
 		
 	<div class="about-content">
+		<h2>关于这个博客</h2>
+		<p>欢迎来到「桑榆的Blog」！这是一个记录我的技术探索、学习心得和生活感悟的个人空间。</p>
 		
+		<h3>博客简介</h3>
+		<p>这个博客基于Hexo静态博客框架搭建，采用了精美的Annie主题，旨在提供一个简洁、优雅且功能丰富的阅读环境。在这里，我会分享：</p>
+		<ul>
+			<li>编程技术笔记与教程</li>
+			<li>项目开发经验与心得</li>
+			<li>学习路上的思考与总结</li>
+			<li>有趣的生活记录与随想</li>
+		</ul>
+		
+		<h3>技术栈</h3>
+		<p>本博客使用以下技术构建：</p>
+		<ul>
+			<li><strong>Hexo</strong> - 快速、简洁且高效的博客框架</li>
+			<li><strong>Annie主题</strong> - 一个优雅、功能丰富的Hexo主题</li>
+			<li><strong>GitHub Pages</strong> - 提供网站托管服务</li>
+		</ul>
+		
+		<h3>关于我</h3>
+		<p>我是一名热爱技术的开发者，对编程充满热情。平时喜欢研究新技术，解决各种技术难题，同时也热衷于分享自己的所学所思。</p>
+		<p>希望这个博客能成为我与志同道合朋友交流的平台，也欢迎各位留言交流，共同进步！</p>
+		
+		<h3>联系方式</h3>
+		<p>如果你有任何问题或建议，欢迎通过以下方式联系我：</p>
+		<ul>
+			<li>GitHub：<a href="https://github.com/yueliusu" target="_blank">https://github.com/yueliusu</a></li>
+			<li>邮箱：shachangjunmoxiao@gmail.com</li>
+		</ul>
+		
+		<p>感谢你访问我的博客，希望你能在这里找到对你有帮助的内容！</p>
 	</div>
 	
 </div>
@@ -328,10 +359,7 @@
 	<div class="copyright">
 		<p>
 			 
-				&copy;2017 - 2024, content by Sariay. All Rights Reserved.
-			
-			
-				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				&copy;2025, content by yueliusu. All Rights Reserved.
 			
 		</p>
 		<p>
