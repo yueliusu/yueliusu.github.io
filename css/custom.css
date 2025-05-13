@@ -1,0 +1,23 @@
+/* 自定义CSS样式 */
+
+/* 修改分类计数的颜色 */
+.category .category-list li .category-list-count {
+  color: #258fb8;
+}
+
+.category .category-list li:hover {
+  color: #258fb8;
+}
+
+.category .category-list a:hover {
+  color: #258fb8;
+}
+
+/* 修改标签计数的颜色 */
+.tags a {
+  color: #555 !important;
+}
+
+.tags a:hover {
+  color: #258fb8 !important;
+}
